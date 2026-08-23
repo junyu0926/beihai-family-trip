@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>北海岸親子小旅行手冊</title>
+<meta name="description" content="2026年中秋連假北海岸親子自駕四天三夜行程手冊：海科館、大武崙沙灘、野柳、金山石門、淡水輕軌，含即時行程提示與可勾選的打包清單。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F1E6;
+    --bg-elevated:#FFFFFF;
+    --surface:#FDFBF5;
+    --ink:#20302F;
+    --ink-soft:#5B6B67;
+    --ink-faint:#8C988F;
+    --border:#E4DAC4;
+    --border-strong:#CFC2A1;
+    --day1:#1F6F8C;
+    --day1-soft:#E2EEF0;
+    --day2:#B8801F;
+    --day2-soft:#F3E9D3;
+    --day3:#C85A34;
+    --day3-soft:#F5E2D8;
+    --day4:#357A65;
+    --day4-soft:#E1EEE7;
+    --chip-bg:#FFFFFF;
+    --shadow:0 1px 2px rgba(32,48,47,.06), 0 8px 24px -12px rgba(32,48,47,.18);
+    --radius-lg:20px;
+    --radius-md:14px;
+    --radius-sm:9px;
+    --font-display:'Noto Serif TC', serif;
+    --font-body:'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0F1817;
+      --bg-elevated:#17211F;
+      --surface:#1B2624;
+      --ink:#EAF1EC;
+      --ink-soft:#A6B8B0;
+      --ink-faint:#71827B;
+      --border:#2B3735;
+      --border-strong:#3B4A46;
+      --day1:#63C1DB;
+      --day1-soft:#1C3138;
+      --day2:#E5AC4C;
+      --day2-soft:#3A2F1B;
+      --day3:#F0916A;
+      --day3-soft:#3B2620;
+      --day4:#6FC6A6;
+      --day4-soft:#1E332C;
+      --chip-bg:#1D2826;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0F1817;
+    --bg-elevated:#17211F;
+    --surface:#1B2624;
+    --ink:#EAF1EC;
+    --ink-soft:#A6B8B0;
+    --ink-faint:#71827B;
+    --border:#2B3735;
+    --border-strong:#3B4A46;
+    --day1:#63C1DB;
+    --day1-soft:#1C3138;
+    --day2:#E5AC4C;
+    --day2-soft:#3A2F1B;
+    --day3:#F0916A;
+    --day3-soft:#3B2620;
+    --day4:#6FC6A6;
+    --day4-soft:#1E332C;
+    --chip-bg:#1D2826;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 12px 28px -14px rgba(0,0,0,.55);
+  }
+
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.6;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:var(--font-display); text-wrap:balance; margin:0; color:var(--ink);}
+  a{color:inherit;}
+  .icon{width:1em;height:1em;display:inline-block;vertical-align:-0.15em;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 18px;}
+  .tabular{font-variant-numeric:tabular-nums;}
+
+  /* ---------- Header ---------- */
+  .hero{
+    background:linear-gradient(180deg, var(--day1-soft), var(--bg) 85%);
+    border-bottom:1px solid var(--border);
+    padding:38px 0 22px;
+  }
+  .hero .eyebrow{
+    font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--day1); font-weight:600; margin-bottom:10px; display:flex; align-items:center; gap:8px;
+  }
+  .hero .eyebrow .rule{flex:1; height:1px; background:linear-gradient(90deg, var(--border-strong), transparent);}
+  .hero h1{font-size:clamp(1.7rem,5.4vw,2.5rem); font-weight:900; line-height:1.25;}
+  .hero .dates{font-family:var(--font-mono); color:var(--ink-soft); margin-top:8px; font-size:.95rem;}
+  .hero .tagline{margin-top:14px; color:var(--ink-soft); font-size:.98rem; max-width:34em;}
+  .hero .stat-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px;}
+  .stat-pill{
+    background:var(--bg-elevated); border:1px solid var(--border); border-radius:999px;
+    padding:7px 14px; font-size:.83rem; color:var(--ink-soft); display:flex; gap:7px; align-items:center;
+  }
+  .stat-pill b{color:var(--ink); font-weight:600;}
+  .status-badge{
+    margin-top:18px; display:inline-flex; align-items:center; gap:9px;
+    background:var(--bg-elevated); border:1px solid var(--border-strong); border-radius:999px;
+    padding:9px 16px 9px 12px; box-shadow:var(--shadow); font-size:.88rem;
+  }
+  .status-dot{width:9px;height:9px;border-radius:50%; background:var(--day1); flex:none;}
+  .status-dot.live{animation:pulse 1.8s ease-in-out infinite;}
+  @media (prefers-reduced-motion: reduce){ .status-dot.live{animation:none;} }
+  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(31,111,140,.45);} 50%{box-shadow:0 0 0 6px rgba(31,111,140,0);}}
+
+  /* ---------- Route strip ---------- */
+  .route-strip{margin-top:24px; overflow-x:auto; padding-bottom:6px; -webkit-overflow-scrolling:touch;}
+  .route-strip ol{list-style:none; display:flex; margin:0; padding:4px 2px; gap:0; min-width:max-content;}
+  .route-strip li{display:flex; flex-direction:column; align-items:center; width:78px; flex:none; position:relative; text-align:center;}
+  .route-strip li:not(:last-child)::after{
+    content:""; position:absolute; top:17px; left:50%; width:78px; height:2px;
+    background:repeating-linear-gradient(90deg, var(--border-strong) 0 6px, transparent 6px 11px);
+  }
+  .route-node{
+    width:34px;height:34px;border-radius:50%; background:var(--bg-elevated); border:1.5px solid var(--border-strong);
+    display:flex; align-items:center; justify-content:center; color:var(--day1); position:relative; z-index:1;
+  }
+  .route-node.home{background:var(--day1); color:var(--bg-elevated); border-color:var(--day1);}
+  .route-strip .label{font-size:.72rem; margin-top:7px; color:var(--ink-soft); line-height:1.3;}
+
+  /* ---------- Nav ---------- */
+  .quicknav{
+    position:sticky; top:0; z-index:20; background:var(--bg); border-bottom:1px solid var(--border);
+    backdrop-filter:blur(6px);
+  }
+  .quicknav .row{display:flex; gap:8px; overflow-x:auto; padding:10px 18px; max-width:760px; margin:0 auto; -webkit-overflow-scrolling:touch;}
+  .quicknav a{
+    flex:none; font-size:.85rem; font-weight:600; padding:7px 13px; border-radius:999px;
+    background:var(--chip-bg); border:1px solid var(--border); color:var(--ink-soft); text-decoration:none;
+    display:flex; align-items:center; gap:6px; transition:background .15s, color .15s, border-color .15s;
+  }
+  .quicknav a.active{background:var(--ink); color:var(--bg); border-color:var(--ink);}
+  .quicknav a .today-flag{
+    font-size:.65rem; font-family:var(--font-mono); background:var(--day3); color:#fff; border-radius:999px;
+    padding:1px 6px; line-height:1.4;
+  }
+
+  /* ---------- Sections generic ---------- */
+  section{padding:38px 0;}
+  section + section{border-top:1px solid var(--border);}
+  .section-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:18px;}
+  .section-head h2{font-size:1.5rem; font-weight:700;}
+  .section-head .hint{font-size:.8rem; color:var(--ink-faint); font-family:var(--font-mono);}
+
+  /* ---------- Overview table ---------- */
+  .table-scroll{overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius-md); background:var(--surface);}
+  table{width:100%; border-collapse:collapse; font-size:.88rem; min-width:560px;}
+  thead th{
+    text-align:left; font-family:var(--font-mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink-faint); font-weight:600; padding:12px 14px; border-bottom:1px solid var(--border);
+  }
+  tbody td{padding:13px 14px; border-bottom:1px solid var(--border); vertical-align:top; color:var(--ink-soft);}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody td:first-child{font-family:var(--font-mono); color:var(--ink); font-weight:600; white-space:nowrap;}
+  tbody td:nth-child(2){color:var(--ink); font-weight:600;}
+
+  /* ---------- Principles ---------- */
+  .principles{display:grid; grid-template-columns:repeat(auto-fill, minmax(210px,1fr)); gap:12px; margin-top:18px;}
+  .principle-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:16px;}
+  .principle-card .p-icon{width:30px;height:30px; border-radius:9px; background:var(--day1-soft); color:var(--day1); display:flex; align-items:center; justify-content:center; margin-bottom:10px;}
+  .principle-card h3{font-size:.98rem; font-weight:700; margin-bottom:5px;}
+  .principle-card p{font-size:.84rem; color:var(--ink-soft); margin:0;}
+
+  /* ---------- Day sections ---------- */
+  .day-section{--day-c:var(--day1); --day-c-soft:var(--day1-soft);}
+  #day2{--day-c:var(--day2); --day-c-soft:var(--day2-soft);}
+  #day3{--day-c:var(--day3); --day-c-soft:var(--day3-soft);}
+  #day4{--day-c:var(--day4); --day-c-soft:var(--day4-soft);}
+
+  .day-card-head{display:flex; align-items:center; gap:14px; margin-bottom:6px;}
+  .day-badge{
+    width:52px;height:52px; border-radius:14px; background:var(--day-c-soft); color:var(--day-c);
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .day-badge .icon{width:28px;height:28px;}
+  .day-meta .day-num{font-family:var(--font-mono); font-size:.75rem; letter-spacing:.1em; color:var(--day-c); font-weight:700; text-transform:uppercase;}
+  .day-meta h2{font-size:1.32rem; font-weight:700; margin-top:2px;}
+  .day-sub{font-size:.85rem; color:var(--ink-soft); margin-top:10px; display:flex; gap:16px; flex-wrap:wrap;}
+  .day-sub span{display:flex; align-items:center; gap:6px;}
+  .day-sub .icon{color:var(--day-c);}
+
+  .timeline{margin-top:22px; display:flex; flex-direction:column;}
+  .t-row{
+    display:grid; grid-template-columns:96px 1fr; gap:14px; padding:13px 0; position:relative;
+    border-left:2px solid var(--border); padding-left:18px; margin-left:6px;
+  }
+  .t-row::before{
+    content:""; position:absolute; left:-6px; top:19px; width:9px; height:9px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--day-c);
+  }
+  .t-row.is-now{background:var(--day-c-soft); border-radius:0 var(--radius-sm) var(--radius-sm) 0; margin-top:-1px;}
+  .t-row.is-now::before{background:var(--day-c); width:11px; height:11px; left:-7px;}
+  .t-time{font-family:var(--font-mono); font-size:.8rem; color:var(--day-c); font-weight:600; padding-top:1px;}
+  .t-body .t-title{font-weight:700; font-size:.98rem; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .t-body .now-flag{font-size:.63rem; font-family:var(--font-mono); background:var(--day-c); color:var(--bg-elevated); padding:1px 7px; border-radius:999px;}
+  .t-body p{margin:5px 0 0; color:var(--ink-soft); font-size:.87rem;}
+
+  .callout{
+    margin-top:22px; border:1px solid var(--border-strong); border-left:4px solid var(--day-c);
+    background:var(--surface); border-radius:var(--radius-md); padding:16px 18px;
+  }
+  .callout .c-head{display:flex; align-items:center; gap:9px; font-weight:700; font-size:.92rem; margin-bottom:9px; color:var(--ink);}
+  .callout .c-head .icon{color:var(--day-c); width:19px; height:19px;}
+  .callout ul{margin:0; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:7px;}
+  .callout li{font-size:.87rem; color:var(--ink-soft); display:flex; gap:8px; align-items:flex-start;}
+  .callout li::before{content:"—"; color:var(--day-c); flex:none;}
+
+  .lodging-line{
+    margin-top:16px; font-size:.86rem; color:var(--ink-soft); display:flex; align-items:center; gap:8px;
+  }
+  .lodging-line .icon{color:var(--day-c);}
+  .lodging-line b{color:var(--ink); font-weight:600;}
+
+  /* ---------- Checklist ---------- */
+  .checklist-groups{display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:14px; margin-top:18px;}
+  .check-group{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:16px;}
+  .check-group h3{font-size:.9rem; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
+  .check-group h3 .icon{color:var(--day1); width:17px; height:17px;}
+  .check-item{display:flex; align-items:flex-start; gap:9px; padding:5px 0; font-size:.87rem; color:var(--ink-soft);}
+  .check-item input{margin-top:3px; width:16px; height:16px; accent-color:var(--day1); flex:none;}
+  .check-item.checked span{color:var(--ink-faint); text-decoration:line-through;}
+
+  .morning-check{
+    margin-top:26px; background:var(--day3-soft); border:1px solid var(--border-strong); border-radius:var(--radius-md);
+    padding:18px 20px;
+  }
+  .morning-check .mc-head{display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px;}
+  .morning-check h3{font-size:1rem; font-weight:700; display:flex; align-items:center; gap:8px;}
+  .morning-check h3 .icon{color:var(--day3);}
+  .reset-btn{
+    font-family:var(--font-mono); font-size:.72rem; background:none; border:1px solid var(--border-strong);
+    color:var(--ink-soft); border-radius:999px; padding:5px 11px; cursor:pointer;
+  }
+  .reset-btn:hover{border-color:var(--day3); color:var(--day3);}
+  .morning-check .grid2{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:4px 18px;}
+
+  /* ---------- Confirm timeline ---------- */
+  .confirm-list{margin-top:18px; display:flex; flex-direction:column; gap:0;}
+  .confirm-row{display:grid; grid-template-columns:120px 1fr; gap:14px; padding:13px 0; border-bottom:1px solid var(--border);}
+  .confirm-row:last-child{border-bottom:none;}
+  .confirm-row .c-date{font-family:var(--font-mono); font-size:.82rem; color:var(--day1); font-weight:600;}
+  .confirm-row p{margin:0; font-size:.9rem; color:var(--ink-soft);}
+
+  .closer-box{
+    margin-top:26px; text-align:center; padding:26px 20px; border-radius:var(--radius-lg);
+    background:var(--day1-soft); border:1px solid var(--border-strong);
+  }
+  .closer-box p{margin:0 0 6px; color:var(--ink-soft); font-size:.92rem;}
+  .closer-box p:last-of-type{margin-bottom:0;}
+  footer{padding:34px 0 60px; text-align:center;}
+  footer .quote{font-family:var(--font-display); font-size:1.15rem; font-weight:700; color:var(--ink);}
+  footer .sign{margin-top:8px; font-size:.8rem; color:var(--ink-faint); font-family:var(--font-mono);}
+
+  /* ---------- Floating jump button ---------- */
+  .jump-fab{
+    position:fixed; right:16px; bottom:18px; z-index:30; background:var(--ink); color:var(--bg);
+    border:none; border-radius:999px; padding:12px 18px; font-size:.85rem; font-weight:600;
+    display:flex; align-items:center; gap:8px; box-shadow:var(--shadow); cursor:pointer; font-family:var(--font-body);
+  }
+  .jump-fab .icon{width:16px;height:16px;}
+  .jump-fab small{font-family:var(--font-mono); opacity:.7; font-weight:500;}
+
+  @media (max-width:480px){
+    .t-row{grid-template-columns:74px 1fr; gap:10px;}
+    .day-badge{width:44px;height:44px;}
+    .day-badge .icon{width:22px;height:22px;}
+  }
+</style>
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2 15c2 0 3-2 5-2s3 2 5 2 3-2 5-2 3 2 5 2M2 19c2 0 3-2 5-2s3 2 5 2 3-2 5-2 3 2 5 2"/></symbol>
+  <symbol id="i-anchor" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.2"/><path d="M12 7.5V20M7 13H2a10 10 0 0 0 10 8 10 10 0 0 0 10-8h-5M6 12h3M15 12h3"/></symbol>
+  <symbol id="i-castle" viewBox="0 0 24 24"><path d="M4 20h16M6 20v-6h3v-3h1.5v-2H8V8l2-2 2 2v1h2V8l2-2 2 2v1.5H14.5v2H16v3h3v6M9 20v-3h6v3"/></symbol>
+  <symbol id="i-lighthouse" viewBox="0 0 24 24"><path d="M10 21h4M9 21l1-13h4l1 13M9.6 12h4.8M9 8h6M2 8l4-2M22 8l-4-2M10.5 4h3v3h-3z"/></symbol>
+  <symbol id="i-tram" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="11" rx="3"/><path d="M3 11h18M7 17v2M17 17v2M8 9h3M13 9h3"/><circle cx="7.5" cy="19.5" r="0.6"/><circle cx="16.5" cy="19.5" r="0.6"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M4 20c0-8 6-14 16-16-2 10-8 16-16 16z"/><path d="M6 18c3-4 6-7 12-12"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.3"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4"/><path d="M8 12.5l3 3 5.5-6.5"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5 12 4l8 7.5M6 10v9h5v-5h2v5h5v-9"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 19v-7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 19v-2M21 19v-4a2 2 0 0 0-2-2h-6M3 15h18v4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></symbol>
+  <symbol id="i-droplet" viewBox="0 0 24 24"><path d="M12 3c3 4 7 8.5 7 12a7 7 0 0 1-14 0c0-3.5 4-8 7-12z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5M3 17l9 5 9-5"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M8 8V6a4 4 0 0 1 8 0v2M4 8h16l-1.2 12.2A2 2 0 0 1 16.8 22H7.2a2 2 0 0 1-2-1.8L4 8z"/></symbol>
+  <symbol id="i-sun-hat" viewBox="0 0 24 24"><path d="M3 15c3-2 15-2 18 0M8 15c0-3 2-5 4-5s4 2 4 5"/><circle cx="12" cy="6" r="1.6"/></symbol>
+  <symbol id="i-sandal" viewBox="0 0 24 24"><path d="M6 4c3 3 3 13 0 16M4 10h14a4 4 0 0 1 4 4v0a4 4 0 0 1-4 4H4z"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3 9.5h18M7 14.5h4"/></symbol>
+  <symbol id="i-battery" viewBox="0 0 24 24"><rect x="2" y="8" width="17" height="8" rx="2"/><path d="M21 10.5v3"/><path d="M9 9l-2 3.5h3l-2 3.5"/></symbol>
+</svg>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow"><svg class="icon"><use href="#i-wave"></use></svg> 北海岸親子自駕小旅行<span class="rule"></span></div>
+    <h1>北海岸四天三夜<br>親子旅遊行程手冊</h1>
+    <div class="dates tabular">2026.09.25 FRI — 09.28 MON</div>
+    <p class="tagline">新店 → 基隆八斗子 → 大武崙 → 野柳 → 金山 → 石門 → 淡水 → 新店。海洋體驗 × 沙灘放電 × 親子飯店 × 北海岸風景 × 輕軌小旅行。</p>
+    <div class="stat-row">
+      <div class="stat-pill"><svg class="icon"><use href="#i-anchor"></use></svg> 旅行方式：<b>自駕＋淡海輕軌</b></div>
+      <div class="stat-pill"><svg class="icon"><use href="#i-shield"></use></svg> 旅行主角：<b>爸媽＋5歲孩子</b></div>
+      <div class="stat-pill"><svg class="icon"><use href="#i-clock"></use></svg> 節奏：<b>上午探索｜午間補眠｜下午放電｜晚上休息</b></div>
+    </div>
+    <div id="statusBadge" class="status-badge"><span class="status-dot" id="statusDot"></span><span id="statusText">計算行程狀態中…</span></div>
+
+    <div class="route-strip">
+      <ol>
+        <li><div class="route-node home"><svg class="icon" style="width:16px;height:16px"><use href="#i-home"></use></svg></div><div class="label">新店</div></li>
+        <li><div class="route-node"><svg class="icon" style="width:15px;height:15px"><use href="#i-anchor"></use></svg></div><div class="label">基隆<br>八斗子</div></li>
+        <li><div class="route-node"><svg class="icon" style="width:15px;height:15px"><use href="#i-castle"></use></svg></div><div class="label">大武崙</div></li>
+        <li><div class="route-node"><svg class="icon" style="width:15px;height:15px"><use href="#i-wave"></use></svg></div><div class="label">野柳</div></li>
+        <li><div class="route-node"><svg class="icon" style="width:15px;height:15px"><use href="#i-pin"></use></svg></div><div class="label">金山</div></li>
+        <li><div class="route-node"><svg class="icon" style="width:15px;height:15px"><use href="#i-lighthouse"></use></svg></div><div class="label">石門</div></li>
+        <li><div class="route-node"><svg class="icon" style="width:15px;height:15px"><use href="#i-tram"></use></svg></div><div class="label">淡水</div></li>
+        <li><div class="route-node home"><svg class="icon" style="width:16px;height:16px"><use href="#i-home"></use></svg></div><div class="label">新店</div></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<nav class="quicknav">
+  <div class="row" id="navRow">
+    <a href="#overview" data-nav="overview">總覽</a>
+    <a href="#day1" data-nav="day1">Day 1 · 9/25</a>
+    <a href="#day2" data-nav="day2">Day 2 · 9/26</a>
+    <a href="#day3" data-nav="day3">Day 3 · 9/27</a>
+    <a href="#day4" data-nav="day4">Day 4 · 9/28</a>
+    <a href="#packing" data-nav="packing">出發清單</a>
+    <a href="#confirm" data-nav="confirm">最後確認</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section id="overview">
+    <div class="section-head"><h2>旅程總覽</h2><span class="hint">4 DAYS · 3 NIGHTS</span></div>
+    <p style="color:var(--ink-soft); font-size:.94rem; margin-top:-6px;">這趟旅行以「孩子不趕、爸媽不累、動線少回頭」為原則。每天都留有休息、補眠與臨時調整空間，遇到天氣或人潮時，以舒適與安全優先。</p>
+
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>日期</th><th>住宿</th><th>主題</th><th>重點</th></tr></thead>
+        <tbody>
+          <tr><td>9/25 五</td><td>基隆長榮桂冠</td><td>海洋知識日</td><td>海科館主題館、8K劇場、典藏／職涯、潮境智能海洋館、潮境公園</td></tr>
+          <tr><td>9/26 六</td><td>薆悅酒店野柳渡假館</td><td>沙灘＋室內放電</td><td>大武崙沙灘（視開放／海況）、野柳移動、Ocean Land</td></tr>
+          <tr><td>9/27 日</td><td>淡水福容大飯店漁人碼頭</td><td>北海岸一路向西</td><td>台電北部展示館、金山老街、富貴角、入住淡水福容</td></tr>
+          <tr><td>9/28 一</td><td>回新店</td><td>淡海輕軌慢旅行</td><td>紅樹林、淡水行政中心、濱海沙崙／公司田溪、漁人碼頭取車返家</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 style="font-size:1.05rem; margin-top:30px; font-weight:700;">全程親子旅行 5 原則</h3>
+    <div class="principles">
+      <div class="principle-card"><div class="p-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-shield"></use></svg></div><h3>安全優先</h3><p>沙灘與海邊行程先看開放狀態、風浪與天候；不為了「照表操課」硬玩。</p></div>
+      <div class="principle-card"><div class="p-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-moon"></use></svg></div><h3>午睡保留</h3><p>移動時段就是孩子充電時間；睡著時可縮減下一站，不急著叫醒。</p></div>
+      <div class="principle-card"><div class="p-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-droplet"></use></svg></div><h3>乾爽優先</h3><p>沙灘後立刻沖腳、擦乾、換衣襪，避免後續整天黏沙或不舒服。</p></div>
+      <div class="principle-card"><div class="p-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-layers"></use></svg></div><h3>室內穿插</h3><p>每天至少安排一段有冷氣、能坐下、能上廁所的行程。</p></div>
+      <div class="principle-card"><div class="p-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-check"></use></svg></div><h3>最後留白</h3><p>第四天下午不再加景點，取車後直接回新店最舒服。</p></div>
+    </div>
+  </section>
+
+  <section id="day1" class="day-section">
+    <div class="day-card-head">
+      <div class="day-badge"><svg class="icon"><use href="#i-anchor"></use></svg></div>
+      <div class="day-meta"><div class="day-num">Day 1 · 9月25日（五）</div><h2>海科館深度體驗＋潮境看海</h2></div>
+    </div>
+    <div class="lodging-line"><svg class="icon"><use href="#i-bed"></use></svg> 住宿：<b>基隆長榮桂冠酒店</b></div>
+
+    <div class="timeline" data-day="1">
+      <div class="t-row" data-start="" data-end=""><div class="t-time">出發</div><div class="t-body"><div class="t-title">新店住家 → 基隆八斗子</div><p>建議提早出門，連假首日預留高速公路車流與停車時間。</p></div></div>
+      <div class="t-row" data-start="09:00" data-end="10:30"><div class="t-time tabular">09:00–10:30</div><div class="t-body"><div class="t-title">國立海洋科技博物館｜主題館</div><p>核心展館先看；抓 1.5 小時即可，不必每區細看。</p></div></div>
+      <div class="t-row" data-start="10:40" data-end="11:30"><div class="t-time tabular">10:40–11:30</div><div class="t-body"><div class="t-title">8K 海洋劇場</div><p>到館後先確認當日場次；若時間不合，可與區域探索館互換。</p></div></div>
+      <div class="t-row" data-start="11:30" data-end="12:00"><div class="t-time tabular">11:30–12:00</div><div class="t-body"><div class="t-title">區域探索館</div><p>以八斗子、地方海洋文化與環境為主，快速看重點。</p></div></div>
+      <div class="t-row" data-start="12:00" data-end="12:50"><div class="t-time tabular">12:00–12:50</div><div class="t-body"><div class="t-title">午餐</div><p>孩子先吃飽、上廁所，再進下午行程。</p></div></div>
+      <div class="t-row" data-start="12:50" data-end="13:10"><div class="t-time tabular">12:50–13:10</div><div class="t-body"><div class="t-title">移動至潮境園區</div><p>預留停車與步行時間，不用趕 13:00 整。</p></div></div>
+      <div class="t-row" data-start="13:10" data-end="13:45"><div class="t-time tabular">13:10–13:45</div><div class="t-body"><div class="t-title">典藏館</div><p>標本、研究與幕後典藏；快速抓重點。</p></div></div>
+      <div class="t-row" data-start="13:50" data-end="14:40"><div class="t-time tabular">13:50–14:40</div><div class="t-body"><div class="t-title">海洋職涯探索基地</div><p>偏互動與職涯體驗，適合親子輕鬆玩。</p></div></div>
+      <div class="t-row" data-start="14:50" data-end="16:30"><div class="t-time tabular">14:50–16:30</div><div class="t-body"><div class="t-title">潮境智能海洋館</div><p>下午主力：水族館＋互動科技，節奏較輕鬆。</p></div></div>
+      <div class="t-row" data-start="16:30" data-end="17:30"><div class="t-time tabular">16:30–17:30</div><div class="t-body"><div class="t-title">潮境公園</div><p>看海、拍照、吹海風；孩子累了就提前收隊。</p></div></div>
+      <div class="t-row" data-start="" data-end=""><div class="t-time">晚上</div><div class="t-body"><div class="t-title">入住基隆長榮桂冠酒店</div><p>以休息為主，晚餐不再硬塞景點。</p></div></div>
+    </div>
+
+    <div class="callout">
+      <div class="c-head"><svg class="icon"><use href="#i-check"></use></svg> DAY 1 出發前確認</div>
+      <ul>
+        <li>8K 海洋劇場當日放映時間。</li>
+        <li>典藏館／職涯基地連假開放狀態。</li>
+        <li>潮境智能海洋館最新開館公告。</li>
+        <li>教師證明文件與相關優惠資格。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="day2" class="day-section">
+    <div class="day-card-head">
+      <div class="day-badge"><svg class="icon"><use href="#i-castle"></use></svg></div>
+      <div class="day-meta"><div class="day-num">Day 2 · 9月26日（六）</div><h2>沙灘放電＋野柳親子飯店</h2></div>
+    </div>
+    <div class="lodging-line"><svg class="icon"><use href="#i-bed"></use></svg> 住宿：<b>薆悅酒店野柳渡假館</b></div>
+
+    <div class="timeline" data-day="2">
+      <div class="t-row" data-start="07:00" data-end="09:00"><div class="t-time tabular">07:00–09:00</div><div class="t-body"><div class="t-title">飯店早餐</div><p>吃飽即可，不追求太多景點。</p></div></div>
+      <div class="t-row" data-start="" data-end=""><div class="t-time">09:30</div><div class="t-body"><div class="t-title">退房出發</div><p>水瓶裝滿清水放車上，作為孩子沖腳用。</p></div></div>
+      <div class="t-row" data-start="09:50" data-end="11:15"><div class="t-time tabular">09:50–11:15</div><div class="t-body"><div class="t-title">大武崙沙灘</div><p>挖沙、蓋城堡；「只有在正式開放＋海況安全」時才進行。</p></div></div>
+      <div class="t-row" data-start="11:15" data-end="11:35"><div class="t-time tabular">11:15–11:35</div><div class="t-body"><div class="t-title">車邊整理</div><p>沖腳 → 擦乾 → 換乾衣服與襪子。</p></div></div>
+      <div class="t-row" data-start="11:35" data-end="12:00"><div class="t-time tabular">11:35–12:00</div><div class="t-body"><div class="t-title">前往萬里野柳</div><p>孩子可在車上小睡約 25 分鐘。</p></div></div>
+      <div class="t-row" data-start="12:00" data-end="12:50"><div class="t-time tabular">12:00–12:50</div><div class="t-body"><div class="t-title">野柳港邊／附近簡單午餐</div><p>以快速、乾淨、方便為主，避免太撐。</p></div></div>
+      <div class="t-row" data-start="" data-end=""><div class="t-time">13:00</div><div class="t-body"><div class="t-title">抵達薆悅酒店</div><p>行李先寄放櫃檯，住房資格可提早使用親子設施時直接進場。</p></div></div>
+      <div class="t-row" data-start="" data-end=""><div class="t-time">13:00起</div><div class="t-body"><div class="t-title">Ocean Land 親子遊戲室</div><p>近 400 坪室內放電；大人、小孩都要準備襪子。</p></div></div>
+      <div class="t-row" data-start="" data-end=""><div class="t-time">晚上</div><div class="t-body"><div class="t-title">入住薆悅酒店野柳渡假館</div><p>晚餐與活動依孩子體力彈性安排。</p></div></div>
+    </div>
+
+    <div class="callout">
+      <div class="c-head"><svg class="icon"><use href="#i-pin"></use></svg> DAY 2 重要備案</div>
+      <ul>
+        <li>大武崙沙灘若仍未開放、出現長浪、強風或下雨：直接取消，不硬闖。</li>
+        <li>沙灘取消後可提早往野柳移動，午餐後提早進飯店休息／玩室內設施。</li>
+        <li>車上備乾襪至少：孩子 2 雙、爸爸媽媽各 1 雙。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="day3" class="day-section">
+    <div class="day-card-head">
+      <div class="day-badge"><svg class="icon"><use href="#i-lighthouse"></use></svg></div>
+      <div class="day-meta"><div class="day-num">Day 3 · 9月27日（日）</div><h2>萬里 → 金山 → 石門 → 淡水</h2></div>
+    </div>
+    <div class="lodging-line"><svg class="icon"><use href="#i-bed"></use></svg> 住宿：<b>淡水福容大飯店漁人碼頭</b></div>
+
+    <div class="timeline" data-day="3">
+      <div class="t-row" data-start="07:00" data-end="09:00"><div class="t-time tabular">07:00–09:00</div><div class="t-body"><div class="t-title">飯店早餐</div><p>第三天仍維持慢節奏。</p></div></div>
+      <div class="t-row" data-start="" data-end=""><div class="t-time">11:00</div><div class="t-body"><div class="t-title">退房出發</div><p>行李上車；洗腳水瓶再補滿備用。</p></div></div>
+      <div class="t-row" data-start="11:05" data-end="12:15"><div class="t-time tabular">11:05–12:15</div><div class="t-body"><div class="t-title">台電北部展示館</div><p>先玩互動遊戲，再看 3D 動畫；離開前可吃台電冰棒。</p></div></div>
+      <div class="t-row" data-start="12:30" data-end="13:30"><div class="t-time tabular">12:30–13:30</div><div class="t-body"><div class="t-title">金山老街午餐</div><p>停金山立體停車場；可吃廟口鴨肉，外帶點心上車。</p></div></div>
+      <div class="t-row" data-start="13:30" data-end="14:15"><div class="t-time tabular">13:30–14:15</div><div class="t-body"><div class="t-title">北海岸移動｜孩子午睡</div><p>前往石門，車內冷氣休息。</p></div></div>
+      <div class="t-row" data-start="14:15" data-end="15:45"><div class="t-time tabular">14:15–15:45</div><div class="t-body"><div class="t-title">老梅迷宮＋富貴角燈塔</div><p>先迷宮，再走步道到燈塔；全程防曬、補水。</p></div></div>
+      <div class="t-row" data-start="15:45" data-end="16:30"><div class="t-time tabular">15:45–16:30</div><div class="t-body"><div class="t-title">前往淡水</div><p>連假建議心理抓 60 分鐘緩衝，不把 40–45 分鐘當硬承諾。</p></div></div>
+      <div class="t-row" data-start="16:30" data-end="17:30"><div class="t-time tabular">16:30–17:30</div><div class="t-body"><div class="t-title">淡水福容入住</div><p>放行李、洗臉休息，讓全家降溫。</p></div></div>
+      <div class="t-row" data-start="" data-end=""><div class="t-time">17:30</div><div class="t-body"><div class="t-title">飯店晚餐</div><p>晚餐後再依體力玩幾米溜滑梯、搭情人塔看夜景。</p></div></div>
+    </div>
+
+    <div class="callout">
+      <div class="c-head"><svg class="icon"><use href="#i-pin"></use></svg> DAY 3 北海岸提醒</div>
+      <ul>
+        <li>中秋連假週日，金山、石門、淡水車流都要抓寬。</li>
+        <li>富貴角步道遮蔭少：帽子、防曬、水壺一定隨身。</li>
+        <li>孩子午睡比準時抵達更重要；若睡得好，可縮短迷宮／燈塔停留。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="day4" class="day-section">
+    <div class="day-card-head">
+      <div class="day-badge"><svg class="icon"><use href="#i-tram"></use></svg></div>
+      <div class="day-meta"><div class="day-num">Day 4 · 9月28日（一）</div><h2>淡海輕軌慢旅行＋輕鬆返家</h2></div>
+    </div>
+    <div class="lodging-line"><svg class="icon"><use href="#i-leaf"></use></svg> 住宿：<b>回新店</b></div>
+
+    <div class="timeline" data-day="4">
+      <div class="t-row" data-start="09:00" data-end="10:30"><div class="t-time tabular">09:00–10:30</div><div class="t-body"><div class="t-title">福容飯店早餐</div><p>慢慢吃，最後一天不早起趕行程。</p></div></div>
+      <div class="t-row" data-start="10:30" data-end="10:45"><div class="t-time tabular">10:30–10:45</div><div class="t-body"><div class="t-title">回房拿行李／退房／寄放</div><p>同時向飯店確認退房後車輛可停放至何時、是否計費。</p></div></div>
+      <div class="t-row" data-start="10:45" data-end="11:00"><div class="t-time tabular">10:45–11:00</div><div class="t-body"><div class="t-title">步行至 V26 淡水漁人碼頭站</div><p>抓 5–8 分鐘步行；大人買淡海輕軌一日票，孩子依年齡規定搭乘。</p></div></div>
+      <div class="t-row" data-start="11:00" data-end="11:35"><div class="t-time tabular">11:00–11:35</div><div class="t-body"><div class="t-title">V26 → V01 紅樹林</div><p>把搭輕軌本身當成「幾米尋寶列車」。</p></div></div>
+      <div class="t-row" data-start="11:35" data-end="12:15"><div class="t-time tabular">11:35–12:15</div><div class="t-body"><div class="t-title">紅樹林生態步道</div><p>找水筆仔、泥灘、招潮蟹洞與彈塗魚；能否大量看到生物受潮汐影響。</p></div></div>
+      <div class="t-row" data-start="12:15" data-end="12:35"><div class="t-time tabular">12:15–12:35</div><div class="t-body"><div class="t-title">V01 → V07 淡水行政中心</div><p>上車喝水、吹冷氣。</p></div></div>
+      <div class="t-row" data-start="12:35" data-end="13:50"><div class="t-time tabular">12:35–13:50</div><div class="t-body"><div class="t-title">午餐＋行政中心周邊</div><p>優先找有冷氣、廁所、兒童椅的餐廳；幾米景觀拍照是加分題。</p></div></div>
+      <div class="t-row" data-start="13:50" data-end="14:30"><div class="t-time tabular">13:50–14:30</div><div class="t-body"><div class="t-title">輕軌午睡時間</div><p>孩子睡著就不要急著下車；一日票就是拿來換取彈性。</p></div></div>
+      <div class="t-row" data-start="14:30" data-end="15:20"><div class="t-time tabular">14:30–15:20</div><div class="t-body"><div class="t-title">V09 濱海沙崙＋公司田溪</div><p>散步、找幾米公仔、看程氏古厝周邊；控制 40–50 分鐘。</p></div></div>
+      <div class="t-row" data-start="15:20" data-end="16:10"><div class="t-time tabular">15:20–16:10</div><div class="t-body"><div class="t-title">搭回 V26 漁人碼頭</div><p>今天最後一次輕軌，回程開始收心。</p></div></div>
+      <div class="t-row" data-start="16:10" data-end="16:30"><div class="t-time tabular">16:10–16:30</div><div class="t-body"><div class="t-title">回福容取行李／上廁所</div><p>慢慢整理、安全上車。</p></div></div>
+      <div class="t-row" data-start="" data-end=""><div class="t-time">16:30</div><div class="t-body"><div class="t-title">開車回新店</div><p>不再加景點；晚餐回家附近再決定。</p></div></div>
+    </div>
+
+    <div class="callout">
+      <div class="c-head"><svg class="icon"><use href="#i-droplet"></use></svg> DAY 4 潮汐與天氣彈性</div>
+      <ul>
+        <li>紅樹林生物觀察受潮位影響；若接近滿潮，看到招潮蟹／彈塗魚的機會可能較少。</li>
+        <li>若天氣炎熱或下雨，縮短戶外步道，把時間留給輕軌與室內午餐。</li>
+        <li>若孩子午睡延長，直接跳過公司田溪也完全沒問題。</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="packing">
+    <div class="section-head"><h2>親子行李與車上備品清單</h2><span class="hint">TAP TO CHECK OFF</span></div>
+    <p style="color:var(--ink-soft); font-size:.9rem; margin-top:-6px;">勾選會自動記住，出發前打包時可直接對照。</p>
+
+    <div class="checklist-groups" id="packingGroups">
+      <div class="check-group" data-group="car">
+        <h3><svg class="icon"><use href="#i-bag"></use></svg> 車上隨手袋</h3>
+        <label class="check-item"><input type="checkbox" data-id="car-1"><span>大容量飲用水</span></label>
+        <label class="check-item"><input type="checkbox" data-id="car-2"><span>洗腳用清水瓶</span></label>
+        <label class="check-item"><input type="checkbox" data-id="car-3"><span>濕紙巾／衛生紙</span></label>
+        <label class="check-item"><input type="checkbox" data-id="car-4"><span>垃圾袋</span></label>
+        <label class="check-item"><input type="checkbox" data-id="car-5"><span>孩子替換衣褲 1 套</span></label>
+        <label class="check-item"><input type="checkbox" data-id="car-6"><span>孩子乾襪 2 雙</span></label>
+        <label class="check-item"><input type="checkbox" data-id="car-7"><span>大人備用襪各 1 雙</span></label>
+        <label class="check-item"><input type="checkbox" data-id="car-8"><span>小毛巾 2 條</span></label>
+        <label class="check-item"><input type="checkbox" data-id="car-9"><span>簡單餅乾／點心</span></label>
+      </div>
+      <div class="check-group" data-group="outdoor">
+        <h3><svg class="icon"><use href="#i-sun-hat"></use></svg> 戶外防護</h3>
+        <label class="check-item"><input type="checkbox" data-id="out-1"><span>孩子帽子</span></label>
+        <label class="check-item"><input type="checkbox" data-id="out-2"><span>大人帽子</span></label>
+        <label class="check-item"><input type="checkbox" data-id="out-3"><span>防曬乳</span></label>
+        <label class="check-item"><input type="checkbox" data-id="out-4"><span>防蚊液</span></label>
+        <label class="check-item"><input type="checkbox" data-id="out-5"><span>輕薄外套</span></label>
+        <label class="check-item"><input type="checkbox" data-id="out-6"><span>折傘／輕便雨衣</span></label>
+        <label class="check-item"><input type="checkbox" data-id="out-7"><span>孩子水壺</span></label>
+      </div>
+      <div class="check-group" data-group="beach">
+        <h3><svg class="icon"><use href="#i-sandal"></use></svg> 海灘用品</h3>
+        <label class="check-item"><input type="checkbox" data-id="bch-1"><span>挖沙工具</span></label>
+        <label class="check-item"><input type="checkbox" data-id="bch-2"><span>防水袋</span></label>
+        <label class="check-item"><input type="checkbox" data-id="bch-3"><span>沙灘鞋／拖鞋</span></label>
+        <label class="check-item"><input type="checkbox" data-id="bch-4"><span>換洗衣物</span></label>
+        <label class="check-item"><input type="checkbox" data-id="bch-5"><span>塑膠袋裝濕衣</span></label>
+      </div>
+      <div class="check-group" data-group="docs">
+        <h3><svg class="icon"><use href="#i-card"></use></svg> 證件票券</h3>
+        <label class="check-item"><input type="checkbox" data-id="doc-1"><span>身分證件</span></label>
+        <label class="check-item"><input type="checkbox" data-id="doc-2"><span>孩子健保卡／年齡證明</span></label>
+        <label class="check-item"><input type="checkbox" data-id="doc-3"><span>教師證明文件（若適用）</span></label>
+        <label class="check-item"><input type="checkbox" data-id="doc-4"><span>飯店訂房憑證</span></label>
+        <label class="check-item"><input type="checkbox" data-id="doc-5"><span>景點電子票／優惠憑證</span></label>
+      </div>
+      <div class="check-group" data-group="electronics">
+        <h3><svg class="icon"><use href="#i-battery"></use></svg> 電子用品</h3>
+        <label class="check-item"><input type="checkbox" data-id="ele-1"><span>手機充電線</span></label>
+        <label class="check-item"><input type="checkbox" data-id="ele-2"><span>行動電源</span></label>
+        <label class="check-item"><input type="checkbox" data-id="ele-3"><span>車充</span></label>
+        <label class="check-item"><input type="checkbox" data-id="ele-4"><span>拍照設備（如有）</span></label>
+      </div>
+    </div>
+
+    <div class="morning-check">
+      <div class="mc-head">
+        <h3><svg class="icon"><use href="#i-sun-hat"></use></svg> 每天早上出門前 30 秒檢查</h3>
+        <button class="reset-btn" id="resetMorning">重置</button>
+      </div>
+      <div class="grid2" id="morningGroup">
+        <label class="check-item"><input type="checkbox" data-id="am-1"><span>今天天氣／降雨？</span></label>
+        <label class="check-item"><input type="checkbox" data-id="am-2"><span>海邊風浪是否安全？</span></label>
+        <label class="check-item"><input type="checkbox" data-id="am-3"><span>景點今天確定開館嗎？</span></label>
+        <label class="check-item"><input type="checkbox" data-id="am-4"><span>孩子水壺裝滿了嗎？</span></label>
+        <label class="check-item"><input type="checkbox" data-id="am-5"><span>乾衣襪與防曬在隨手袋嗎？</span></label>
+        <label class="check-item"><input type="checkbox" data-id="am-6"><span>導航目的地與停車點已設定嗎？</span></label>
+      </div>
+    </div>
+  </section>
+
+  <section id="confirm">
+    <div class="section-head"><h2>出發前最後確認</h2></div>
+    <div class="confirm-list">
+      <div class="confirm-row"><div class="c-date">9/24 晚上</div><p>確認四天氣象、北海岸風浪、大武崙沙灘是否開放。</p></div>
+      <div class="confirm-row"><div class="c-date">9/25 早上</div><p>確認海科館各館開放、8K 海洋劇場場次與當日優惠。</p></div>
+      <div class="confirm-row"><div class="c-date">9/26 早上</div><p>再看一次大武崙即時開放／海況；不安全就直接啟動備案。</p></div>
+      <div class="confirm-row"><div class="c-date">9/27 早上</div><p>確認台電北部展示館當日營運與金山／石門車況。</p></div>
+      <div class="confirm-row"><div class="c-date">9/28 早上</div><p>確認淡水天氣、紅樹林潮位、飯店退房後停車規定。</p></div>
+    </div>
+
+    <div class="closer-box">
+      <p><b style="color:var(--ink)">旅行中可以隨時刪掉一站。</b></p>
+      <p>孩子累、睡著、天氣變、塞車，都不是行程失敗。</p>
+      <p>親子旅行的好行程，不是每一格都打勾，而是全家回家時還有好心情。</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="quote">祝你們一路看海、一路玩、一路留下好回憶。</div>
+    <div class="sign">北海岸四天三夜親子旅行｜2026 秋</div>
+  </footer>
+</main>
+
+<button class="jump-fab" id="jumpFab"><svg class="icon"><use href="#i-clock"></use></svg><span id="jumpLabel">跳到現在</span></button>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---------- trip day detection ----------
+  var TRIP = {2026:{9:{25:1,26:2,27:3,28:4}}};
+  function tripDay(d){
+    var y=d.getFullYear(), m=d.getMonth()+1, day=d.getDate();
+    return (TRIP[y] && TRIP[y][m] && TRIP[y][m][day]) || 0;
+  }
+  function toMinutes(hhmm){
+    var p = hhmm.split(":"); return (+p[0])*60 + (+p[1]);
+  }
+
+  var now = new Date();
+  var todayIdx = tripDay(now);
+  var statusText = document.getElementById("statusText");
+  var statusDot = document.getElementById("statusDot");
+  var jumpLabel = document.getElementById("jumpLabel");
+
+  var tripStart = new Date(2026,8,25,0,0,0);
+  var tripEnd = new Date(2026,8,28,23,59,59);
+
+  var activeRow = null;
+
+  if(todayIdx > 0){
+    statusDot.classList.add("live");
+    statusText.textContent = "今天是行程第 " + todayIdx + " 天（9/" + (24+todayIdx) + "）－點右下角按鈕跳到現在";
+    var flag = document.querySelector('.quicknav a[data-nav="day' + todayIdx + '"]');
+    if(flag){
+      var b = document.createElement("span");
+      b.className = "today-flag"; b.textContent = "今天";
+      flag.appendChild(b);
+    }
+    var nowMin = now.getHours()*60 + now.getMinutes();
+    var rows = document.querySelectorAll('.timeline[data-day="' + todayIdx + '"] .t-row');
+    rows.forEach(function(r){
+      var s = r.getAttribute("data-start"), e = r.getAttribute("data-end");
+      if(s && e){
+        var sm = toMinutes(s), em = toMinutes(e);
+        if(nowMin >= sm && nowMin <= em){
+          r.classList.add("is-now");
+          var flagEl = document.createElement("span");
+          flagEl.className = "now-flag"; flagEl.textContent = "現在";
+          r.querySelector(".t-title").appendChild(flagEl);
+          activeRow = r;
+        }
+      }
+    });
+    jumpLabel.textContent = activeRow ? "跳到現在的行程" : ("跳到 Day " + todayIdx);
+  } else if(now < tripStart){
+    var diffDays = Math.ceil((tripStart - now) / 86400000);
+    statusText.textContent = diffDays <= 0 ? "行程即將開始！" : ("距離出發還有 " + diffDays + " 天");
+    jumpLabel.textContent = "看 Day 1";
+  } else if(now > tripEnd){
+    statusText.textContent = "旅程已結束，希望你們留下滿滿的好回憶！";
+    jumpLabel.textContent = "回到總覽";
+  }
+
+  document.getElementById("jumpFab").addEventListener("click", function(){
+    var target = activeRow || document.getElementById(todayIdx > 0 ? ("day" + todayIdx) : (now > tripEnd ? "overview" : "day1"));
+    if(target) target.scrollIntoView({behavior: (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) ? "auto" : "smooth", block: "center"});
+  });
+
+  // ---------- scroll-spy nav ----------
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll(".quicknav a"));
+  var sections = navLinks.map(function(a){ return document.getElementById(a.getAttribute("data-nav")); }).filter(Boolean);
+  if("IntersectionObserver" in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          var id = en.target.id;
+          navLinks.forEach(function(a){ a.classList.toggle("active", a.getAttribute("data-nav") === id); });
+        }
+      });
+    }, {rootMargin: "-45% 0px -50% 0px"});
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+
+  // ---------- packing checklist persistence ----------
+  function loadJSON(key){
+    try{ var v = localStorage.getItem(key); return v ? JSON.parse(v) : null; } catch(e){ return null; }
+  }
+  function saveJSON(key, val){
+    try{ localStorage.setItem(key, JSON.stringify(val)); } catch(e){}
+  }
+
+  var packState = loadJSON("beihai-packing-v1") || {};
+  document.querySelectorAll('#packingGroups input[type="checkbox"]').forEach(function(cb){
+    var id = cb.getAttribute("data-id");
+    if(packState[id]){ cb.checked = true; cb.closest(".check-item").classList.add("checked"); }
+    cb.addEventListener("change", function(){
+      packState[id] = cb.checked;
+      cb.closest(".check-item").classList.toggle("checked", cb.checked);
+      saveJSON("beihai-packing-v1", packState);
+    });
+  });
+
+  // ---------- morning check (auto-resets on a new day) ----------
+  function todayKey(d){
+    return d.getFullYear() + "-" + (d.getMonth()+1) + "-" + d.getDate();
+  }
+  var morningStore = loadJSON("beihai-morning-check-v1");
+  var morningState = (morningStore && morningStore.date === todayKey(now)) ? morningStore.checks : {};
+  document.querySelectorAll('#morningGroup input[type="checkbox"]').forEach(function(cb){
+    var id = cb.getAttribute("data-id");
+    if(morningState[id]){ cb.checked = true; cb.closest(".check-item").classList.add("checked"); }
+    cb.addEventListener("change", function(){
+      morningState[id] = cb.checked;
+      cb.closest(".check-item").classList.toggle("checked", cb.checked);
+      saveJSON("beihai-morning-check-v1", {date: todayKey(new Date()), checks: morningState});
+    });
+  });
+  document.getElementById("resetMorning").addEventListener("click", function(){
+    morningState = {};
+    document.querySelectorAll('#morningGroup input[type="checkbox"]').forEach(function(cb){
+      cb.checked = false; cb.closest(".check-item").classList.remove("checked");
+    });
+    saveJSON("beihai-morning-check-v1", {date: todayKey(new Date()), checks: morningState});
+  });
+})();
+</script>
+</body>
+</html>
