@@ -233,6 +233,41 @@
   .lodging-line .icon{color:var(--day-c);}
   .lodging-line b{color:var(--ink); font-weight:600;}
 
+  /* ---------- Day map card ---------- */
+  .map-card{
+    margin-top:20px; border:1px solid var(--border); border-radius:var(--radius-md); overflow:hidden; background:var(--surface);
+  }
+  .map-card .map-embed-wrap{position:relative; width:100%; padding-top:52%; background:var(--day-c-soft);}
+  .map-card iframe{position:absolute; inset:0; width:100%; height:100%; border:0; filter:saturate(.9);}
+  .map-card .map-foot{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:11px 15px; flex-wrap:wrap;}
+  .map-card .map-foot span{font-size:.78rem; color:var(--ink-faint); display:flex; align-items:center; gap:6px;}
+  .map-card .map-foot span .icon{color:var(--day-c);}
+  .map-open-link{
+    font-size:.8rem; font-weight:600; color:var(--day-c); text-decoration:none; display:flex; align-items:center; gap:5px;
+    border:1px solid var(--border-strong); border-radius:999px; padding:5px 12px; white-space:nowrap;
+  }
+  .map-open-link:hover{background:var(--day-c-soft);}
+
+  /* ---------- Photo strip ---------- */
+  .photo-strip{display:flex; gap:12px; margin-top:16px; overflow-x:auto; padding-bottom:4px; -webkit-overflow-scrolling:touch;}
+  .photo-card{
+    flex:none; width:230px; border-radius:var(--radius-md); overflow:hidden; background:var(--surface);
+    border:1px solid var(--border); display:flex; flex-direction:column;
+  }
+  .photo-card img{width:100%; height:150px; object-fit:cover; display:block; background:var(--day-c-soft);}
+  .photo-card .photo-cap{padding:10px 12px;}
+  .photo-card .photo-cap .p-name{font-size:.86rem; font-weight:700; color:var(--ink);}
+  .photo-card .photo-cap .p-credit{font-size:.68rem; color:var(--ink-faint); margin-top:3px; display:block;}
+  .photo-card .photo-cap .p-credit a{color:var(--ink-faint); text-decoration:underline;}
+
+  /* ---------- Per-stop map pin ---------- */
+  .pin-link{
+    display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:6px;
+    color:var(--day-c); background:var(--day-c-soft); text-decoration:none; flex:none; vertical-align:-4px;
+  }
+  .pin-link .icon{width:12px; height:12px;}
+  .pin-link:hover{background:var(--day-c); color:var(--bg-elevated);}
+
   /* ---------- Checklist ---------- */
   .checklist-groups{display:grid; grid-template-columns:repeat(auto-fill, minmax(220px,1fr)); gap:14px; margin-top:18px;}
   .check-group{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md); padding:16px;}
@@ -372,6 +407,20 @@
       </table>
     </div>
 
+    <div class="map-card" style="--day-c:var(--day1); --day-c-soft:var(--day1-soft); margin-top:16px;">
+      <div class="map-embed-wrap">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?saddr=%E6%96%B0%E5%BA%97&daddr=%E5%9F%BA%E9%9A%86%E5%85%AB%E6%96%97%E5%AD%90+to:%E5%A4%A7%E6%AD%A6%E5%B4%99+to:%E9%87%8E%E6%9F%B3%E5%9C%B0%E8%B3%AA%E5%85%AC%E5%9C%92+to:%E9%87%91%E5%B1%B1%E8%80%81%E8%A1%97+to:%E7%9F%B3%E9%96%80%E6%B4%AA%E5%A0%A4%E7%A9%B4+to:%E6%B7%A1%E6%B0%B4%E6%BC%81%E4%BA%BA%E7%A2%BC%E9%A0%AD+to:%E6%96%B0%E5%BA%97&output=embed"
+          title="北海岸四天三夜總覽路線圖"></iframe>
+      </div>
+      <div class="map-foot">
+        <span><svg class="icon"><use href="#i-pin"></use></svg> 新店 → 基隆 → 大武崙 → 野柳 → 金山 → 石門 → 淡水 → 新店</span>
+        <a class="map-open-link" href="https://maps.google.com/maps?saddr=%E6%96%B0%E5%BA%97&daddr=%E5%9F%BA%E9%9A%86%E5%85%AB%E6%96%97%E5%AD%90+to:%E5%A4%A7%E6%AD%A6%E5%B4%99+to:%E9%87%8E%E6%9F%B3%E5%9C%B0%E8%B3%AA%E5%85%AC%E5%9C%92+to:%E9%87%91%E5%B1%B1%E8%80%81%E8%A1%97+to:%E7%9F%B3%E9%96%80%E6%B4%AA%E5%A0%A4%E7%A9%B4+to:%E6%B7%A1%E6%B0%B4%E6%BC%81%E4%BA%BA%E7%A2%BC%E9%A0%AD+to:%E6%96%B0%E5%BA%97" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-anchor"></use></svg> 用 Google 地圖導航全程
+        </a>
+      </div>
+    </div>
+
     <h3 style="font-size:1.05rem; margin-top:30px; font-weight:700;">全程親子旅行 5 原則</h3>
     <div class="principles">
       <div class="principle-card"><div class="p-icon"><svg class="icon" style="width:17px;height:17px"><use href="#i-shield"></use></svg></div><h3>安全優先</h3><p>沙灘與海邊行程先看開放狀態、風浪與天候；不為了「照表操課」硬玩。</p></div>
@@ -389,9 +438,30 @@
     </div>
     <div class="lodging-line"><svg class="icon"><use href="#i-bed"></use></svg> 住宿：<b>基隆長榮桂冠酒店</b></div>
 
+    <div class="map-card">
+      <div class="map-embed-wrap">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?saddr=新店&daddr=國立海洋科技博物館+to:潮境公園+to:基隆長榮桂冠酒店&output=embed"
+          title="Day1 路線地圖：海科館、潮境公園"></iframe>
+      </div>
+      <div class="map-foot">
+        <span><svg class="icon"><use href="#i-pin"></use></svg> 海科館 → 潮境公園 → 基隆長榮桂冠酒店</span>
+        <a class="map-open-link" href="https://maps.google.com/maps?saddr=新店&daddr=國立海洋科技博物館+to:潮境公園+to:基隆長榮桂冠酒店" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-anchor"></use></svg> 開啟導航
+        </a>
+      </div>
+    </div>
+
+    <div class="photo-strip">
+      <div class="photo-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/國立海洋科技博物館FUJI5506.JPG?width=800" alt="國立海洋科技博物館" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-card').style.display='none'">
+        <div class="photo-cap"><div class="p-name">國立海洋科技博物館</div><span class="p-credit">照片：<a href="https://commons.wikimedia.org/wiki/File:國立海洋科技博物館FUJI5506.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></span></div>
+      </div>
+    </div>
+
     <div class="timeline" data-day="1">
       <div class="t-row" data-start="" data-end=""><div class="t-time">出發</div><div class="t-body"><div class="t-title">新店住家 → 基隆八斗子</div><p>建議提早出門，連假首日預留高速公路車流與停車時間。</p></div></div>
-      <div class="t-row" data-start="09:00" data-end="10:30"><div class="t-time tabular">09:00–10:30</div><div class="t-body"><div class="t-title">國立海洋科技博物館｜主題館</div><p>核心展館先看；抓 1.5 小時即可，不必每區細看。</p></div></div>
+      <div class="t-row" data-start="09:00" data-end="10:30"><div class="t-time tabular">09:00–10:30</div><div class="t-body"><div class="t-title">國立海洋科技博物館｜主題館<a class="pin-link" href="https://www.google.com/maps/search/?api=1&query=國立海洋科技博物館" target="_blank" rel="noopener" title="在 Google 地圖開啟"><svg class="icon"><use href="#i-pin"></use></svg></a></div><p>核心展館先看；抓 1.5 小時即可，不必每區細看。</p></div></div>
       <div class="t-row" data-start="10:40" data-end="11:30"><div class="t-time tabular">10:40–11:30</div><div class="t-body"><div class="t-title">8K 海洋劇場</div><p>到館後先確認當日場次；若時間不合，可與區域探索館互換。</p></div></div>
       <div class="t-row" data-start="11:30" data-end="12:00"><div class="t-time tabular">11:30–12:00</div><div class="t-body"><div class="t-title">區域探索館</div><p>以八斗子、地方海洋文化與環境為主，快速看重點。</p></div></div>
       <div class="t-row" data-start="12:00" data-end="12:50"><div class="t-time tabular">12:00–12:50</div><div class="t-body"><div class="t-title">午餐</div><p>孩子先吃飽、上廁所，再進下午行程。</p></div></div>
@@ -399,7 +469,7 @@
       <div class="t-row" data-start="13:10" data-end="13:45"><div class="t-time tabular">13:10–13:45</div><div class="t-body"><div class="t-title">典藏館</div><p>標本、研究與幕後典藏；快速抓重點。</p></div></div>
       <div class="t-row" data-start="13:50" data-end="14:40"><div class="t-time tabular">13:50–14:40</div><div class="t-body"><div class="t-title">海洋職涯探索基地</div><p>偏互動與職涯體驗，適合親子輕鬆玩。</p></div></div>
       <div class="t-row" data-start="14:50" data-end="16:30"><div class="t-time tabular">14:50–16:30</div><div class="t-body"><div class="t-title">潮境智能海洋館</div><p>下午主力：水族館＋互動科技，節奏較輕鬆。</p></div></div>
-      <div class="t-row" data-start="16:30" data-end="17:30"><div class="t-time tabular">16:30–17:30</div><div class="t-body"><div class="t-title">潮境公園</div><p>看海、拍照、吹海風；孩子累了就提前收隊。</p></div></div>
+      <div class="t-row" data-start="16:30" data-end="17:30"><div class="t-time tabular">16:30–17:30</div><div class="t-body"><div class="t-title">潮境公園<a class="pin-link" href="https://www.google.com/maps/search/?api=1&query=潮境公園" target="_blank" rel="noopener" title="在 Google 地圖開啟"><svg class="icon"><use href="#i-pin"></use></svg></a></div><p>看海、拍照、吹海風；孩子累了就提前收隊。</p></div></div>
       <div class="t-row" data-start="" data-end=""><div class="t-time">晚上</div><div class="t-body"><div class="t-title">入住基隆長榮桂冠酒店</div><p>以休息為主，晚餐不再硬塞景點。</p></div></div>
     </div>
 
@@ -421,13 +491,34 @@
     </div>
     <div class="lodging-line"><svg class="icon"><use href="#i-bed"></use></svg> 住宿：<b>薆悅酒店野柳渡假館</b></div>
 
+    <div class="map-card">
+      <div class="map-embed-wrap">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?saddr=基隆長榮桂冠酒店&daddr=大武崙沙灘+to:野柳地質公園+to:薆悅酒店野柳渡假館&output=embed"
+          title="Day2 路線地圖：大武崙沙灘、野柳"></iframe>
+      </div>
+      <div class="map-foot">
+        <span><svg class="icon"><use href="#i-pin"></use></svg> 大武崙沙灘 → 野柳 → 薆悅酒店野柳渡假館</span>
+        <a class="map-open-link" href="https://maps.google.com/maps?saddr=基隆長榮桂冠酒店&daddr=大武崙沙灘+to:野柳地質公園+to:薆悅酒店野柳渡假館" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-anchor"></use></svg> 開啟導航
+        </a>
+      </div>
+    </div>
+
+    <div class="photo-strip">
+      <div class="photo-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Yehliu_Geopark_in_Taiwan_02.jpg?width=800" alt="野柳地質公園" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-card').style.display='none'">
+        <div class="photo-cap"><div class="p-name">野柳地質公園</div><span class="p-credit">照片：<a href="https://commons.wikimedia.org/wiki/File:Yehliu_Geopark_in_Taiwan_02.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></div>
+      </div>
+    </div>
+
     <div class="timeline" data-day="2">
       <div class="t-row" data-start="07:00" data-end="09:00"><div class="t-time tabular">07:00–09:00</div><div class="t-body"><div class="t-title">飯店早餐</div><p>吃飽即可，不追求太多景點。</p></div></div>
       <div class="t-row" data-start="" data-end=""><div class="t-time">09:30</div><div class="t-body"><div class="t-title">退房出發</div><p>水瓶裝滿清水放車上，作為孩子沖腳用。</p></div></div>
-      <div class="t-row" data-start="09:50" data-end="11:15"><div class="t-time tabular">09:50–11:15</div><div class="t-body"><div class="t-title">大武崙沙灘</div><p>挖沙、蓋城堡；「只有在正式開放＋海況安全」時才進行。</p></div></div>
+      <div class="t-row" data-start="09:50" data-end="11:15"><div class="t-time tabular">09:50–11:15</div><div class="t-body"><div class="t-title">大武崙沙灘<a class="pin-link" href="https://www.google.com/maps/search/?api=1&query=大武崙沙灘" target="_blank" rel="noopener" title="在 Google 地圖開啟"><svg class="icon"><use href="#i-pin"></use></svg></a></div><p>挖沙、蓋城堡；「只有在正式開放＋海況安全」時才進行。</p></div></div>
       <div class="t-row" data-start="11:15" data-end="11:35"><div class="t-time tabular">11:15–11:35</div><div class="t-body"><div class="t-title">車邊整理</div><p>沖腳 → 擦乾 → 換乾衣服與襪子。</p></div></div>
       <div class="t-row" data-start="11:35" data-end="12:00"><div class="t-time tabular">11:35–12:00</div><div class="t-body"><div class="t-title">前往萬里野柳</div><p>孩子可在車上小睡約 25 分鐘。</p></div></div>
-      <div class="t-row" data-start="12:00" data-end="12:50"><div class="t-time tabular">12:00–12:50</div><div class="t-body"><div class="t-title">野柳港邊／附近簡單午餐</div><p>以快速、乾淨、方便為主，避免太撐。</p></div></div>
+      <div class="t-row" data-start="12:00" data-end="12:50"><div class="t-time tabular">12:00–12:50</div><div class="t-body"><div class="t-title">野柳港邊／附近簡單午餐<a class="pin-link" href="https://www.google.com/maps/search/?api=1&query=野柳地質公園" target="_blank" rel="noopener" title="在 Google 地圖開啟"><svg class="icon"><use href="#i-pin"></use></svg></a></div><p>以快速、乾淨、方便為主，避免太撐。</p></div></div>
       <div class="t-row" data-start="" data-end=""><div class="t-time">13:00</div><div class="t-body"><div class="t-title">抵達薆悅酒店</div><p>行李先寄放櫃檯，住房資格可提早使用親子設施時直接進場。</p></div></div>
       <div class="t-row" data-start="" data-end=""><div class="t-time">13:00起</div><div class="t-body"><div class="t-title">Ocean Land 親子遊戲室</div><p>近 400 坪室內放電；大人、小孩都要準備襪子。</p></div></div>
       <div class="t-row" data-start="" data-end=""><div class="t-time">晚上</div><div class="t-body"><div class="t-title">入住薆悅酒店野柳渡假館</div><p>晚餐與活動依孩子體力彈性安排。</p></div></div>
@@ -450,15 +541,40 @@
     </div>
     <div class="lodging-line"><svg class="icon"><use href="#i-bed"></use></svg> 住宿：<b>淡水福容大飯店漁人碼頭</b></div>
 
+    <div class="map-card">
+      <div class="map-embed-wrap">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?saddr=薆悅酒店野柳渡假館&daddr=台電北部展示館+to:金山老街+to:富貴角燈塔+to:淡水福容大飯店漁人碼頭&output=embed"
+          title="Day3 路線地圖：金山、石門、淡水"></iframe>
+      </div>
+      <div class="map-foot">
+        <span><svg class="icon"><use href="#i-pin"></use></svg> 台電展示館 → 金山老街 → 富貴角燈塔 → 淡水福容</span>
+        <a class="map-open-link" href="https://maps.google.com/maps?saddr=薆悅酒店野柳渡假館&daddr=台電北部展示館+to:金山老街+to:富貴角燈塔+to:淡水福容大飯店漁人碼頭" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-anchor"></use></svg> 開啟導航
+        </a>
+      </div>
+    </div>
+
+    <div class="photo-strip">
+      <div class="photo-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/富貴角燈塔DSC_6721.JPG?width=800" alt="富貴角燈塔" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-card').style.display='none'">
+        <div class="photo-cap"><div class="p-name">富貴角燈塔</div><span class="p-credit">照片：<a href="https://commons.wikimedia.org/wiki/File:富貴角燈塔DSC_6721.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></span></div>
+      </div>
+      <div class="photo-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/2020_Sunset_of_Tamsui_Fisherman's_Wharf.jpg?width=800" alt="淡水漁人碼頭" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-card').style.display='none'">
+        <div class="photo-cap"><div class="p-name">淡水漁人碼頭</div><span class="p-credit">照片：<a href="https://commons.wikimedia.org/wiki/File:2020_Sunset_of_Tamsui_Fisherman's_Wharf.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></div>
+      </div>
+    </div>
+
     <div class="timeline" data-day="3">
       <div class="t-row" data-start="07:00" data-end="09:00"><div class="t-time tabular">07:00–09:00</div><div class="t-body"><div class="t-title">飯店早餐</div><p>第三天仍維持慢節奏。</p></div></div>
       <div class="t-row" data-start="" data-end=""><div class="t-time">11:00</div><div class="t-body"><div class="t-title">退房出發</div><p>行李上車；洗腳水瓶再補滿備用。</p></div></div>
-      <div class="t-row" data-start="11:05" data-end="12:15"><div class="t-time tabular">11:05–12:15</div><div class="t-body"><div class="t-title">台電北部展示館</div><p>先玩互動遊戲，再看 3D 動畫；離開前可吃台電冰棒。</p></div></div>
-      <div class="t-row" data-start="12:30" data-end="13:30"><div class="t-time tabular">12:30–13:30</div><div class="t-body"><div class="t-title">金山老街午餐</div><p>停金山立體停車場；可吃廟口鴨肉，外帶點心上車。</p></div></div>
+      <div class="t-row" data-start="11:05" data-end="12:15"><div class="t-time tabular">11:05–12:15</div><div class="t-body"><div class="t-title">台電北部展示館<a class="pin-link" href="https://www.google.com/maps/search/?api=1&query=台電北部展示館" target="_blank" rel="noopener" title="在 Google 地圖開啟"><svg class="icon"><use href="#i-pin"></use></svg></a></div><p>先玩互動遊戲，再看 3D 動畫；離開前可吃台電冰棒。</p></div></div>
+      <div class="t-row" data-start="12:30" data-end="13:30"><div class="t-time tabular">12:30–13:30</div><div class="t-body"><div class="t-title">金山老街午餐<a class="pin-link" href="https://www.google.com/maps/search/?api=1&query=金山老街" target="_blank" rel="noopener" title="在 Google 地圖開啟"><svg class="icon"><use href="#i-pin"></use></svg></a></div><p>停金山立體停車場；可吃廟口鴨肉，外帶點心上車。</p></div></div>
       <div class="t-row" data-start="13:30" data-end="14:15"><div class="t-time tabular">13:30–14:15</div><div class="t-body"><div class="t-title">北海岸移動｜孩子午睡</div><p>前往石門，車內冷氣休息。</p></div></div>
-      <div class="t-row" data-start="14:15" data-end="15:45"><div class="t-time tabular">14:15–15:45</div><div class="t-body"><div class="t-title">老梅迷宮＋富貴角燈塔</div><p>先迷宮，再走步道到燈塔；全程防曬、補水。</p></div></div>
+      <div class="t-row" data-start="14:15" data-end="15:45"><div class="t-time tabular">14:15–15:45</div><div class="t-body"><div class="t-title">老梅迷宮＋富貴角燈塔<a class="pin-link" href="https://www.google.com/maps/search/?api=1&query=富貴角燈塔" target="_blank" rel="noopener" title="在 Google 地圖開啟"><svg class="icon"><use href="#i-pin"></use></svg></a></div><p>先迷宮，再走步道到燈塔；全程防曬、補水。</p></div></div>
       <div class="t-row" data-start="15:45" data-end="16:30"><div class="t-time tabular">15:45–16:30</div><div class="t-body"><div class="t-title">前往淡水</div><p>連假建議心理抓 60 分鐘緩衝，不把 40–45 分鐘當硬承諾。</p></div></div>
-      <div class="t-row" data-start="16:30" data-end="17:30"><div class="t-time tabular">16:30–17:30</div><div class="t-body"><div class="t-title">淡水福容入住</div><p>放行李、洗臉休息，讓全家降溫。</p></div></div>
+      <div class="t-row" data-start="16:30" data-end="17:30"><div class="t-time tabular">16:30–17:30</div><div class="t-body"><div class="t-title">淡水福容入住<a class="pin-link" href="https://www.google.com/maps/search/?api=1&query=淡水福容大飯店漁人碼頭" target="_blank" rel="noopener" title="在 Google 地圖開啟"><svg class="icon"><use href="#i-pin"></use></svg></a></div><p>放行李、洗臉休息，讓全家降溫。</p></div></div>
       <div class="t-row" data-start="" data-end=""><div class="t-time">17:30</div><div class="t-body"><div class="t-title">飯店晚餐</div><p>晚餐後再依體力玩幾米溜滑梯、搭情人塔看夜景。</p></div></div>
     </div>
 
@@ -479,16 +595,41 @@
     </div>
     <div class="lodging-line"><svg class="icon"><use href="#i-leaf"></use></svg> 住宿：<b>回新店</b></div>
 
+    <div class="map-card">
+      <div class="map-embed-wrap">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?saddr=淡水福容大飯店漁人碼頭&daddr=紅樹林生態展示館+to:淡水行政中心站+to:濱海沙崙站+to:淡水漁人碼頭站&output=embed"
+          title="Day4 路線地圖：淡海輕軌慢旅行"></iframe>
+      </div>
+      <div class="map-foot">
+        <span><svg class="icon"><use href="#i-pin"></use></svg> 漁人碼頭站 → 紅樹林 → 行政中心 → 沙崙 → 漁人碼頭站</span>
+        <a class="map-open-link" href="https://maps.google.com/maps?saddr=淡水福容大飯店漁人碼頭&daddr=紅樹林生態展示館+to:淡水行政中心站+to:濱海沙崙站+to:淡水漁人碼頭站" target="_blank" rel="noopener">
+          <svg class="icon"><use href="#i-anchor"></use></svg> 開啟導航
+        </a>
+      </div>
+    </div>
+
+    <div class="photo-strip">
+      <div class="photo-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Taipei_MRT_Hongshulin_Station_01.jpg?width=800" alt="紅樹林站" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-card').style.display='none'">
+        <div class="photo-cap"><div class="p-name">紅樹林站</div><span class="p-credit">照片：<a href="https://commons.wikimedia.org/wiki/File:Taipei_MRT_Hongshulin_Station_01.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></div>
+      </div>
+      <div class="photo-card">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Old_brick_houses_in_Chongjian_Street,_Tamsui.jpg?width=800" alt="淡水老街" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.photo-card').style.display='none'">
+        <div class="photo-cap"><div class="p-name">淡水老街</div><span class="p-credit">照片：<a href="https://commons.wikimedia.org/wiki/File:Old_brick_houses_in_Chongjian_Street,_Tamsui.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></span></div>
+      </div>
+    </div>
+
     <div class="timeline" data-day="4">
       <div class="t-row" data-start="09:00" data-end="10:30"><div class="t-time tabular">09:00–10:30</div><div class="t-body"><div class="t-title">福容飯店早餐</div><p>慢慢吃，最後一天不早起趕行程。</p></div></div>
       <div class="t-row" data-start="10:30" data-end="10:45"><div class="t-time tabular">10:30–10:45</div><div class="t-body"><div class="t-title">回房拿行李／退房／寄放</div><p>同時向飯店確認退房後車輛可停放至何時、是否計費。</p></div></div>
       <div class="t-row" data-start="10:45" data-end="11:00"><div class="t-time tabular">10:45–11:00</div><div class="t-body"><div class="t-title">步行至 V26 淡水漁人碼頭站</div><p>抓 5–8 分鐘步行；大人買淡海輕軌一日票，孩子依年齡規定搭乘。</p></div></div>
       <div class="t-row" data-start="11:00" data-end="11:35"><div class="t-time tabular">11:00–11:35</div><div class="t-body"><div class="t-title">V26 → V01 紅樹林</div><p>把搭輕軌本身當成「幾米尋寶列車」。</p></div></div>
-      <div class="t-row" data-start="11:35" data-end="12:15"><div class="t-time tabular">11:35–12:15</div><div class="t-body"><div class="t-title">紅樹林生態步道</div><p>找水筆仔、泥灘、招潮蟹洞與彈塗魚；能否大量看到生物受潮汐影響。</p></div></div>
-      <div class="t-row" data-start="12:15" data-end="12:35"><div class="t-time tabular">12:15–12:35</div><div class="t-body"><div class="t-title">V01 → V07 淡水行政中心</div><p>上車喝水、吹冷氣。</p></div></div>
+      <div class="t-row" data-start="11:35" data-end="12:15"><div class="t-time tabular">11:35–12:15</div><div class="t-body"><div class="t-title">紅樹林生態步道<a class="pin-link" href="https://www.google.com/maps/search/?api=1&query=紅樹林生態展示館" target="_blank" rel="noopener" title="在 Google 地圖開啟"><svg class="icon"><use href="#i-pin"></use></svg></a></div><p>找水筆仔、泥灘、招潮蟹洞與彈塗魚；能否大量看到生物受潮汐影響。</p></div></div>
+      <div class="t-row" data-start="12:15" data-end="12:35"><div class="t-time tabular">12:15–12:35</div><div class="t-body"><div class="t-title">V01 → V07 淡水行政中心<a class="pin-link" href="https://www.google.com/maps/search/?api=1&query=淡水行政中心站" target="_blank" rel="noopener" title="在 Google 地圖開啟"><svg class="icon"><use href="#i-pin"></use></svg></a></div><p>上車喝水、吹冷氣。</p></div></div>
       <div class="t-row" data-start="12:35" data-end="13:50"><div class="t-time tabular">12:35–13:50</div><div class="t-body"><div class="t-title">午餐＋行政中心周邊</div><p>優先找有冷氣、廁所、兒童椅的餐廳；幾米景觀拍照是加分題。</p></div></div>
       <div class="t-row" data-start="13:50" data-end="14:30"><div class="t-time tabular">13:50–14:30</div><div class="t-body"><div class="t-title">輕軌午睡時間</div><p>孩子睡著就不要急著下車；一日票就是拿來換取彈性。</p></div></div>
-      <div class="t-row" data-start="14:30" data-end="15:20"><div class="t-time tabular">14:30–15:20</div><div class="t-body"><div class="t-title">V09 濱海沙崙＋公司田溪</div><p>散步、找幾米公仔、看程氏古厝周邊；控制 40–50 分鐘。</p></div></div>
+      <div class="t-row" data-start="14:30" data-end="15:20"><div class="t-time tabular">14:30–15:20</div><div class="t-body"><div class="t-title">V09 濱海沙崙＋公司田溪<a class="pin-link" href="https://www.google.com/maps/search/?api=1&query=公司田溪口濕地" target="_blank" rel="noopener" title="在 Google 地圖開啟"><svg class="icon"><use href="#i-pin"></use></svg></a></div><p>散步、找幾米公仔、看程氏古厝周邊；控制 40–50 分鐘。</p></div></div>
       <div class="t-row" data-start="15:20" data-end="16:10"><div class="t-time tabular">15:20–16:10</div><div class="t-body"><div class="t-title">搭回 V26 漁人碼頭</div><p>今天最後一次輕軌，回程開始收心。</p></div></div>
       <div class="t-row" data-start="16:10" data-end="16:30"><div class="t-time tabular">16:10–16:30</div><div class="t-body"><div class="t-title">回福容取行李／上廁所</div><p>慢慢整理、安全上車。</p></div></div>
       <div class="t-row" data-start="" data-end=""><div class="t-time">16:30</div><div class="t-body"><div class="t-title">開車回新店</div><p>不再加景點；晚餐回家附近再決定。</p></div></div>
